@@ -1,3 +1,4 @@
+import 'package:coffeebeans/screens/authenticate/register.dart';
 import 'package:coffeebeans/screens/authenticate/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
-    return SignIn();
+    // return SignIn();
+    return Register();
   }
 }

@@ -1,6 +1,9 @@
+import 'package:coffeebeans/models/user.dart';
 import 'package:coffeebeans/screens/wrapper.dart';
+import 'package:coffeebeans/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +18,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Wrapper(),
+    return StreamProvider<MyUser?>.value(
+      catchError: (_, __) {},
+      initialData: null,
+      value: AuthService().user,
+      child: const MaterialApp(
+        home: Wrapper(),
+      ),
     );
   }
 }
